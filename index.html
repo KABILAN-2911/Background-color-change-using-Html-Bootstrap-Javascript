@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background-Color Change</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container mt-5 p-5 text-center w-75" style="height:350px;" id="bgcolor" >
+        <div class="container bg-black text-white w-25 mt-5 text-center h5" >Background Color : <span class ="text-white"id="colorname"></span></div>
+        <button class="button bg-primary btn-center text-white"  onclick="change()">click to change</button>
+
+    </div>
+    
+    <script>
+     
+     let colordata = {
+    Red:"red",
+    Green:"green",
+    Yellow:"yellow",
+    Blue:"blue",
+    Pink:"lightpink",
+    Aqua:"aqua"
+    
+    
+}
+function change(){
+    
+    const values = Object.keys(colordata)
+    const changes = values[Math.floor(Math.random() * values.length)]
+    document.getElementById("colorname").innerText = changes
+    document.querySelector("#bgcolor").style.backgroundColor = colordata[changes]
+    
+}
+
+change(colordata);
+          
+    </script>
+</body>
+</html>
